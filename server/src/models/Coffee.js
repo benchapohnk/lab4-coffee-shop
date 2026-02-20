@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
         price: DataTypes.INTEGER,
         type: DataTypes.STRING, // hot, iced, frappe
         status: DataTypes.STRING, // หรือใช้ DataTypes.BOOLEAN ก็ได้ครับ
-      description: DataTypes.STRING
+      description: DataTypes.STRING,
+      image: DataTypes.STRING
     })
     return Coffee
 }

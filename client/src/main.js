@@ -5,7 +5,9 @@ import App from './App.vue'
 import router from './router'
 import './style.css'
 
-// 1. นำเข้าไฟล์ CoffeeHeader ให้ถูกต้อง
+// นำเข้า CkeditorPlugin (สังเกตชื่อตัวแปร)
+import { CkeditorPlugin } from '@ckeditor/ckeditor5-vue' 
+
 import CoffeeHeader from './components/CoffeeHeader.vue' 
 
 const app = createApp(App)
@@ -15,7 +17,8 @@ pinia.use(piniaPluginPersistedstate)
 app.use(pinia)
 app.use(router)
 
-// 2. ลงทะเบียน Component ชื่อ 'coffee-header'
-app.component('coffee-header', CoffeeHeader) 
+// เรียกใช้งาน Plugin ด้วยชื่อที่ถูกต้อง
+app.use(CkeditorPlugin) 
 
+app.component('coffee-header', CoffeeHeader) 
 app.mount('#app')
